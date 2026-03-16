@@ -6,10 +6,10 @@ export default defineConfig({
   description: 'Modern Laravel Admin Panel Builder with Livewire v4',
   
   // GitHub Pages base path
-  base: '/xadmin/',
+  base: '/xadmin-website/',
 
   head: [
-    ['link', { rel: 'icon', href: '/xadmin/favicon.ico' }],
+    ['link', { rel: 'icon', href: '/xadmin-website/favicon.ico' }],
     ['meta', { name: 'theme-color', content: '#FF2D20' }],
   ],
 
