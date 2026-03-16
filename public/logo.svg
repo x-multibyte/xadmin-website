@@ -1,0 +1,20 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景圆形 -->
+  <circle cx="100" cy="100" r="95" fill="#FF2D20"/>
+
+  <!-- X 字母 -->
+  <path d="M60 60 L140 140 M140 60 L60 140"
+        stroke="white"
+        stroke-width="16"
+        stroke-linecap="round"/>
+
+  <!-- Admin 文字 -->
+  <text x="100" y="175"
+        font-family="Arial, sans-serif"
+        font-size="14"
+        font-weight="bold"
+        fill="white"
+        text-anchor="middle">
+    ADMIN
+  </text>
+</svg>
