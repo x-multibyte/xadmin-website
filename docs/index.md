@@ -19,22 +19,22 @@ hero:
       link: https://github.com/x-multibyte/xadmin
 
 features:
-  - icon: /icons/livewire.svg
+  - icon: "⚡"
     title: Livewire v4 Powered
     details: Build responsive interfaces with pure PHP, no JavaScript required
-  - icon: /icons/palette.svg
+  - icon: "🎨"
     title: Tailwind CSS
     details: Modern UI design, perfectly integrated with Laravel ecosystem
-  - icon: /icons/shield.svg
+  - icon: "🛡️"
     title: Type Safe
     details: PHP 8.3+ strict type checking, PHPStan Level 9
-  - icon: /icons/test.svg
+  - icon: "🧪"
     title: Testing First
     details: Pest + Testbench, comprehensive test coverage
-  - icon: /icons/rocket.svg
+  - icon: "🚀"
     title: Laravel 12
     details: Fully compatible with the latest Laravel version
-  - icon: /icons/box.svg
+  - icon: "📦"
     title: Out of the Box
     details: Grid, Form, Auth, quickly build CRUD operations
 ---
