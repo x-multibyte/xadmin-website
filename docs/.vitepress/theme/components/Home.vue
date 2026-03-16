@@ -1,12 +1,11 @@
 <script setup>
 import { computed } from 'vue'
 import { useData } from 'vitepress'
-import VPHomeHero from 'vitepress/theme/components/VPHomeHero.vue'
 
 // Heroicons
 import { LightningBoltIcon, SwatchIcon, ShieldCheckIcon, BeakerIcon, RocketIcon, CubeIcon } from '@heroicons/vue/24/solid'
 
-const { page } = useData()
+const { page, site } = useData()
 
 const isZh = computed(() => page.value.relativePath.startsWith('zh/'))
 
@@ -77,8 +76,30 @@ const features = computed(() => isZh.value ? [
 
 <template>
   <div class="vp-home">
-    <VPHomeHero />
-    <div class="custom-features">
+    <!-- Hero Section -->
+    <section class="vp-hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-name">
+            {{ site.title }}
+          </h1>
+          <p class="hero-text">
+            {{ site.description }}
+          </p>
+          <div class="hero-actions">
+            <a :href="isZh ? '/zh/guide/installation' : '/guide/installation'" class="btn btn-primary">
+              {{ isZh ? '快速开始' : 'Quick Start' }}
+            </a>
+            <a href="https://github.com/x-multibyte/xadmin" class="btn btn-secondary" target="_blank">
+              {{ isZh ? '在 GitHub 上查看' : 'View on GitHub' }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="custom-features">
       <div class="container">
         <div class="items">
           <div v-for="feature in features" :key="feature.title" class="item">
@@ -88,9 +109,147 @@ const features = computed(() => isZh.value ? [
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
+
+<style scoped>
+.vp-home {
+  width: 100%;
+}
+
+/* Hero Section */
+.vp-hero {
+  padding: 6rem 0 4rem;
+  text-align: center;
+}
+
+.vp-hero .container {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hero-name {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--vp-c-brand-1);
+  margin-bottom: 1rem;
+}
+
+.hero-text {
+  font-size: 1.5rem;
+  color: var(--vp-c-text-2);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.875rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: var(--vp-c-brand-1);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--vp-c-brand-2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 45, 32, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--vp-c-text-1);
+  border: 2px solid var(--vp-c-divider);
+}
+
+.btn-secondary:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+}
+
+/* Features Section */
+.custom-features {
+  padding: 4rem 0;
+}
+
+.custom-features .container {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.custom-features .items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 960px) {
+  .custom-features .items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .custom-features .items {
+    grid-template-columns: 1fr;
+  }
+}
+
+.custom-features .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 12px;
+  background: var(--vp-c-bg-alt);
+  transition: all 0.3s ease;
+  border: 1px solid var(--vp-c-divider);
+}
+
+.custom-features .item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(255, 45, 32, 0.15);
+  border-color: var(--vp-c-brand-1);
+}
+
+.custom-features .icon {
+  width: 64px;
+  height: 64px;
+  color: var(--vp-c-brand-1);
+  margin-bottom: 1rem;
+}
+
+.custom-features .title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+  margin: 0 0 0.5rem;
+}
+
+.custom-features .details {
+  font-size: 0.875rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.6;
+  margin: 0;
+}
+</style>
 
 <style scoped>
 .custom-features {
