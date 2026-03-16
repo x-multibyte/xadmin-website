@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import { useData } from 'vitepress'
 
 // Heroicons
-import { LightningBoltIcon, SwatchIcon, ShieldCheckIcon, BeakerIcon, RocketIcon, CubeIcon } from '@heroicons/vue/24/solid'
+import { BoltIcon, SwatchIcon, ShieldCheckIcon, BeakerIcon, RocketLaunchIcon, CubeIcon } from '@heroicons/vue/24/solid'
 
 const { page, site } = useData()
 
@@ -11,7 +11,7 @@ const isZh = computed(() => page.value.relativePath.startsWith('zh/'))
 
 const features = computed(() => isZh.value ? [
   {
-    icon: LightningBoltIcon,
+    icon: BoltIcon,
     title: 'Livewire v4 驱动',
     details: '使用纯 PHP 构建响应式界面，无需编写 JavaScript'
   },
@@ -31,7 +31,7 @@ const features = computed(() => isZh.value ? [
     details: 'Pest + Testbench，全面的测试覆盖'
   },
   {
-    icon: RocketIcon,
+    icon: RocketLaunchIcon,
     title: 'Laravel 12',
     details: '完全兼容最新版本的 Laravel'
   },
@@ -42,7 +42,7 @@ const features = computed(() => isZh.value ? [
   }
 ] : [
   {
-    icon: LightningBoltIcon,
+    icon: BoltIcon,
     title: 'Livewire v4 Powered',
     details: 'Build responsive interfaces with pure PHP, no JavaScript required'
   },
@@ -62,7 +62,7 @@ const features = computed(() => isZh.value ? [
     details: 'Pest + Testbench, comprehensive test coverage'
   },
   {
-    icon: RocketIcon,
+    icon: RocketLaunchIcon,
     title: 'Laravel 12',
     details: 'Fully compatible with the latest Laravel version'
   },
