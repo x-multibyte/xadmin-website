@@ -4,9 +4,12 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'XAdmin',
   description: 'Modern Laravel Admin Panel Builder with Livewire v4',
+  
+  // GitHub Pages base path
+  base: '/xadmin/',
 
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['link', { rel: 'icon', href: '/xadmin/favicon.ico' }],
     ['meta', { name: 'theme-color', content: '#FF2D20' }],
   ],
 
